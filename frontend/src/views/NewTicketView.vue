@@ -24,7 +24,7 @@
 
 <script setup>
 import { reactive, ref } from 'vue';
-import axios from 'axios';
+import api from '../lib/api.js';
 
 const form = reactive({
   title: '',
@@ -37,7 +37,7 @@ const form = reactive({
 const message = ref('');
 
 const submitTicket = async () => {
-  await axios.post('http://localhost:4000/api/tickets', form);
+  await api.post('/tickets', form);
   message.value = 'Ticket created successfully.';
   form.title = '';
   form.description = '';

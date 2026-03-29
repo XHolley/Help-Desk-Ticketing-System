@@ -23,15 +23,15 @@
 
 <script setup>
 import { computed, onMounted, ref, watch } from 'vue';
-import axios from 'axios';
 import TicketCard from '../components/TicketCard.vue';
+import api from '../lib/api.js';
 
 const tickets = ref([]);
 const search = ref('');
 const status = ref('');
 
 const loadTickets = async () => {
-  const { data } = await axios.get('http://localhost:4000/api/tickets', {
+  const { data } = await api.get('/tickets', {
     params: {
       search: search.value,
       status: status.value

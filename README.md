@@ -1,64 +1,143 @@
-# Help Desk Ticketing System Portfolio Project
+# Help Desk Ticketing System
 
-A portfolio-ready full-stack project built to strengthen the exact areas recruiters look for in junior software, IT support, analyst, and QA candidates.
+A full-stack ticket management application built with Vue 3, Node.js, and Express. The project simulates a real internal support workflow where employees submit issues and support teams track, prioritize, assign, and resolve tickets.
 
-## Why this project helps your resume
+This repository is designed as a portfolio project for junior software engineering, IT support, QA, and analyst roles.
 
-This project shows experience with:
-- Vue 3 front-end development
-- Node.js / Express API development
-- PostgreSQL-ready data modeling
-- Authentication and role-based access patterns
-- Ticketing workflow logic used in real businesses
-- Testing, validation, documentation, and API structure
+## Tech stack
 
-## Resume-ready skills demonstrated
-
-- JavaScript
 - Vue 3
+- Vue Router
+- Vite
 - Node.js
 - Express
-- REST APIs
-- SQL / PostgreSQL
-- Authentication
-- CRUD operations
-- Form validation
-- Error handling
-- Role-based access control
-- Technical documentation
+- Axios
+- REST API design
 
-## Project features
+## Features
 
-- User login and register
-- Role-aware dashboard (`agent`, `manager`, `employee`)
-- Create, update, assign, and close tickets
-- Priority, status, category, and requester tracking
-- Search and filter tickets
-- API health check
-- Clean code structure for scaling
+- Ticket dashboard with live search and status filtering
+- New ticket creation flow
+- Ticket detail data model with priority, category, requester, assignee, and status
+- Role-aware authentication mock routes for portfolio discussion
+- Health check endpoint for backend monitoring
+- Clean separation between frontend, backend, and supporting docs
 
-## Folder structure
+## Project structure
 
-- `frontend/` Vue application
+- `frontend/` Vue single-page application
 - `backend/` Express API
-- `docs/` resume bullets and interview notes
+- `docs/` resume bullets and interview talking points
 
-## Quick start
+## Run locally
 
-### Backend
+### 1. Start the backend
+
 ```bash
 cd backend
 npm install
 npm run dev
 ```
 
-### Frontend
+The API runs on `http://localhost:4000`.
+
+### 2. Start the frontend
+
 ```bash
 cd frontend
 npm install
+cp .env.example .env
 npm run dev
 ```
 
-## What to say in interviews
+The Vite app runs on `http://localhost:5173`.
 
-Built a full-stack help desk ticketing system using Vue 3, Node.js, and Express to manage support requests, priorities, ownership, and ticket lifecycle workflows. Structured the application with reusable components, REST APIs, role-aware views, and validation patterns to simulate a real business support environment.
+## Environment variables
+
+The frontend reads its API base URL from `VITE_API_BASE_URL`.
+
+Example:
+
+```bash
+VITE_API_BASE_URL=http://localhost:4000/api
+```
+
+If no environment variable is provided, the frontend defaults to `http://localhost:4000/api`.
+
+## API overview
+
+### Health check
+
+- `GET /api/health`
+
+### Auth routes
+
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+
+### Ticket routes
+
+- `GET /api/tickets`
+- `GET /api/tickets/:id`
+- `POST /api/tickets`
+- `PUT /api/tickets/:id`
+
+Supported query params for `GET /api/tickets`:
+
+- `status`
+- `priority`
+- `search`
+
+## Deployment notes
+
+### Frontend
+
+The frontend can be deployed to Vercel or Netlify.
+
+Before deploying, set:
+
+```bash
+VITE_API_BASE_URL=https://your-backend-url/api
+```
+
+### Backend
+
+The backend can be deployed to Render, Railway, or another Node-compatible host.
+
+Set:
+
+```bash
+PORT=4000
+```
+
+In production, the platform usually provides `PORT` automatically.
+
+## Resume value
+
+This project demonstrates:
+
+- Frontend and backend integration
+- RESTful API structure
+- CRUD workflows
+- Filtering and search behavior
+- Environment-based configuration
+- Documentation for recruiters and interview conversations
+
+## Interview summary
+
+Built a full-stack help desk ticketing system using Vue 3 and Express to model real support operations. Implemented ticket creation, search, filtering, and update flows, structured the frontend and API as separate applications, and documented the project in a way that makes the business value and technical decisions easy to explain in interviews.
+
+## Recommended GitHub topics
+
+Add these topics on the repository page:
+
+- `vue`
+- `vue3`
+- `vite`
+- `nodejs`
+- `express`
+- `javascript`
+- `rest-api`
+- `help-desk`
+- `ticketing-system`
+- `portfolio-project`
