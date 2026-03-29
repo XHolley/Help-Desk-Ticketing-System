@@ -1,0 +1,84 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f5f7fb;
+}
+body {
+  margin: 0;
+}
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.topbar nav {
+  display: flex;
+  gap: 14px;
+}
+.topbar a {
+  text-decoration: none;
+  color: #0f4c81;
+  font-weight: 600;
+}
+.toolbar, .stats {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+input, select, textarea, button {
+  padding: 10px 12px;
+  border: 1px solid #cfd7e3;
+  border-radius: 8px;
+  font: inherit;
+}
+textarea {
+  min-height: 120px;
+}
+button {
+  background: #0f4c81;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.ticket-card, .stat-box, .form-wrap {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.badge {
+  background: #e8f1ff;
+  color: #0f4c81;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+.form-wrap form {
+  display: grid;
+  gap: 12px;
+}
+.success {
+  color: #0a7a34;
+  font-weight: 600;
+}
