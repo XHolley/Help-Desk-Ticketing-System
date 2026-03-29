@@ -1,0 +1,8 @@
+1. Why did you build this?
+I wanted a project that looked like real business software instead of a toy app, so I built a help desk system that reflects how companies manage support requests, priorities, ownership, and ticket status.
+
+2. What did you learn?
+I strengthened my Vue front-end skills, API design, component structure, validation, debugging, and the way business workflows translate into software logic.
+
+3. What would you improve next?
+I would add JWT authentication, PostgreSQL persistence, automated tests, audit logs, email notifications, and admin reporting dashboards.

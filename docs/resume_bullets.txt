@@ -1,0 +1,12 @@
+HELP DESK TICKETING SYSTEM | Vue 3, Node.js, Express, REST API, SQL-ready design
+- Built a full-stack help desk ticketing system using Vue 3, Node.js, and Express to manage support requests, ticket ownership, priorities, and status workflows.
+- Designed reusable frontend components, REST API routes, and structured validation logic to support maintainable and scalable application development.
+- Implemented role-aware dashboard behavior, ticket filtering, search, and update flows to simulate a real business support environment.
+- Documented setup steps, API behavior, and feature architecture to strengthen technical communication and project maintainability.
+
+WHY THIS PROJECT HELPS
+- Shows Vue experience
+- Shows backend API experience
+- Shows business application experience
+- Shows real-world CRUD logic
+- Helps with software, IT support, analyst, and QA roles
