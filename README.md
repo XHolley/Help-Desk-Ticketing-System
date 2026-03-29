@@ -16,11 +16,13 @@ This repository is designed as a portfolio project for junior software engineeri
 
 ## Features
 
-- Ticket dashboard with live search and status filtering
+- Ticket dashboard with live search, status filtering, and priority filtering
 - New ticket creation flow
+- Ticket assignment, unassignment, close, and reopen actions
 - Ticket detail data model with priority, category, requester, assignee, and status
 - Role-aware authentication mock routes for portfolio discussion
 - Health check endpoint for backend monitoring
+- Backend request validation for ticket create and update flows
 - Clean separation between frontend, backend, and supporting docs
 
 ## Project structure
@@ -88,6 +90,12 @@ Supported query params for `GET /api/tickets`:
 - `priority`
 - `search`
 
+Validation rules include:
+
+- required `title`, `description`, `category`, `priority`, and `requester` on ticket creation
+- allowed values for status, priority, and category
+- optional `assignedTo` as either a string or `null`
+
 ## Deployment notes
 
 ### Frontend
@@ -120,6 +128,8 @@ This project demonstrates:
 - RESTful API structure
 - CRUD workflows
 - Filtering and search behavior
+- Validation and error-state handling
+- Ticket lifecycle actions from the UI
 - Environment-based configuration
 - Documentation for recruiters and interview conversations
 
