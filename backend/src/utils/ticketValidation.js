@@ -12,6 +12,7 @@ export const validateTicketPayload = (payload, { partial = false } = {}) => {
   const errors = [];
   const normalized = {};
 
+  // Create requests require the full ticket payload, while updates can send only changed fields.
   const requiredFields = ['title', 'description', 'category', 'priority', 'requester'];
 
   if (!partial) {

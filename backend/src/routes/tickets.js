@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
   const { status, priority, search } = req.query;
   let results = [...tickets];
 
+  // Reject unsupported filter values early so the UI gets a clear API error.
   if (status && !TICKET_STATUSES.includes(status)) {
     return res.status(400).json({ message: `status must be one of: ${TICKET_STATUSES.join(', ')}` });
   }
@@ -57,6 +58,7 @@ router.post('/', (req, res) => {
   const newTicket = {
     id: Date.now(),
     ...normalized,
+    // New tickets always begin open and unassigned, regardless of client input.
     status: 'Open',
     assignedTo: null,
     createdAt: new Date().toISOString()
@@ -77,6 +79,7 @@ router.put('/:id', (req, res) => {
 
   const nextTicket = { ...tickets[index], ...normalized };
 
+  // Closed tickets should still have ownership in the mock workflow for demo consistency.
   if (nextTicket.status === 'Closed' && !nextTicket.assignedTo) {
     nextTicket.assignedTo = DEFAULT_ASSIGNEE;
   }

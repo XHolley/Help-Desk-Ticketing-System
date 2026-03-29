@@ -54,6 +54,7 @@ const loading = ref(false);
 const errorMessage = ref('');
 const feedbackMessage = ref('');
 
+// Auto-clear short success messages so the dashboard stays readable during repeated actions.
 const setFeedback = (message) => {
   feedbackMessage.value = message;
   setTimeout(() => {
@@ -87,6 +88,7 @@ const openCount = computed(() => tickets.value.filter(t => t.status === 'Open').
 const inProgressCount = computed(() => tickets.value.filter(t => t.status === 'In Progress').length);
 const closedCount = computed(() => tickets.value.filter(t => t.status === 'Closed').length);
 
+// Keep ticket actions in one place so assignment and status changes share the same API/error flow.
 const updateTicket = async (ticket, payload, message) => {
   errorMessage.value = '';
 
